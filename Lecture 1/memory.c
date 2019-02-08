@@ -24,7 +24,12 @@ int main(){
 	const char * word = "Hi There";
 
 	//You are allowed to edit in the following number:
-	unsigned long long number = 17;
+    unsigned long long number = *((unsigned long long*) word);
+
+    printf("%d \n", number);
+
+
+    //printf("0x%llx\n", num);
 	//Editing stops now
 
 
@@ -44,10 +49,6 @@ int main(){
 }
 
 
-	/*
-	Hint: Consider using the following:
 
-	unsigned long long num = *((unsigned long long*) word); //This prints something, but what?
-	printf("0x%llx\n", num);
-	*/
+
 

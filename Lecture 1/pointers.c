@@ -20,15 +20,19 @@ void swap1(int * a, int * b);
 int getLengthOfString(char * str);
 
 int main(int argc, char* args[]){
-	int a = 5;
+	int  a = 5;
 	int b = 7;
 	
 	//Do Swap by calling the function you implemented. You only need one of them, and only one of them can be made to work.
 	//swapcall(a,b);
+	int *a_ptr = &a;
+	int *b_ptr = &b;
+
+	swap1(a_ptr,b_ptr);
 
 
 	if (a == 7 && b == 5){
-		printf("Succes swapping!\n");
+		printf("%s", "Succes swapping!\n");
 	}
 
 	if (argc == 2){
@@ -42,16 +46,18 @@ int main(int argc, char* args[]){
 Implement me?
 */
 void swap0(int a, int b){
-
-
+int temp  = a;
+a=b;
+b=temp;
 }
 
 /*
 Implement me?
 */
 void swap1(int * a, int * b){
-
-
+	int temp  = *a;
+	*a = *b;
+	*b = temp;
 }
 
 
@@ -60,9 +66,14 @@ void swap1(int * a, int * b){
 Implement me!
 */
 int getLengthOfString(char * str){
-
-
-	return -1;
+	int count = 0;
+	while(*str != '\0'){
+		printf("%c", *str);
+		str++;
+		count++;
+	}
+	printf("\n");
+	return count;
 }
 //Hint: How does c-style strings end? And what sort of data structure are they, as it's just a char *?
 
