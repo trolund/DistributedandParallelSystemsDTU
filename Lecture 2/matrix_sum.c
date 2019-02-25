@@ -13,10 +13,12 @@
 
 long matrix[ROWS][COLS];
 
-double get_seconds() { 
-  /* Use a suitable clock reading function here */
-  return 0.0;
+double get_seconds() {
+    struct timespec container;
+    clock_gettime(CLOCK_MONOTONIC, &container);
+    return (double) container.tv_nsec/1000000000.+container.tv_sec;
 }
+
 
 
 void fill(long m[ROWS][COLS]) {

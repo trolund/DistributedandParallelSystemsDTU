@@ -57,8 +57,9 @@ int main() {
     exit(1);
   }
 
-  for (csize=CACHE_MIN; csize <= CACHE_MAX; csize=csize*2) 
-    for (stride=1; stride <= STRIDE_MAX; stride=stride*2) {
+
+    for (stride=1; stride <= STRIDE_MAX; stride=stride*2)
+        for (csize=CACHE_MIN; csize <= CACHE_MAX; csize=csize*2) {
 
       limit = &x[csize-1]; /* last element of current cache size */
      
